@@ -1,5 +1,5 @@
 function Header() {
-  return <h1>My Favorite Cities</h1>;
+  return <header>My Favorite Cities</header>;
 }
 
 export default Header;
