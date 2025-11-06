@@ -8,6 +8,8 @@ function Contact() {
   });
 
   const handleChange = (e) => {
+    e.preventDefault();
+
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
