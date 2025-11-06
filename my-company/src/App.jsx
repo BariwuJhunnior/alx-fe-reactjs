@@ -1,4 +1,4 @@
-import Navbar from "./Components/Navbar . jsx";
+import Navbar from "./Components/Navbar.jsx";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./Components/Home";
@@ -12,8 +12,8 @@ import React from "react";
 function App() {
   return (
     <>
-      <Navbar />
       <main>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -22,8 +22,8 @@ function App() {
           /* Catch-All for unknown routes */
           <Route path="*" element={<h1>Page Not Found!</h1>} />
         </Routes>
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
