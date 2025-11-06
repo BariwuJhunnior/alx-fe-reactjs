@@ -1,11 +1,11 @@
-import Navbar from "./Components/Navbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./Components/Home";
-import Services from "./Components/Services";
-import Contact from "./Components/Contact";
-import About from "./Components/About";
-import Footer from "./Components/Footer";
+import Home from "./components/Home.jsx";
+import Services from "./components/Services.jsx";
+import Contact from "./components/Contact.jsx";
+import About from "./components/About.jsx";
+import Footer from "./components/Footer.jsx";
 
 import React from "react";
 
