@@ -6,7 +6,14 @@ function Navbar() {
   const isActive = (to) => (pathname === to ? "active" : "");
 
   return (
-    <nav className="navbar">
+    <nav
+      className="navbar"
+      style={{
+        backgroundColor: "skyblue",
+        display: "flex",
+        justifyContent: "spaceBetween",
+      }}
+    >
       <div className="brand">MySite</div>
       <ul className="navlinks">
         <li>
