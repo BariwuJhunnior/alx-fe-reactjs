@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 import useRecipeStore from "./recipeStore";
 
 const RecipeList = () => {
-  const recipes = useRecipeStore((state) => state.recipes);
+  const allRecipesEmpty = useRecipeStore((state) => state.recipes.length === 0);
+  const recipes = useRecipeStore((state) => state.filteredRecipes);
 
   return (
     <div className="recipe-list">
       <h2>Recipes</h2>
-      {recipes.length === 0 ? (
+      {allRecipesEmpty ? (
         <p>No recipes yet. Add one to get started!</p>
+      ) : recipes.length === 0 ? (
+        <p>No recipes match your search.</p>
       ) : (
         <ul>
           {recipes.map((recipe) => (
