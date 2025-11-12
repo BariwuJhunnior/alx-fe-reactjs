@@ -66,6 +66,75 @@ const useRecipeStore = create((set) => ({
         filteredRecipes: filterRecipes(state.recipes, searchTerm),
       };
     }),
+
+  favorites: [],
+
+  addFavorite: (recipeId) =>
+    set((state) => {
+      if (!state.favorites.includes(recipeId)) {
+        return { favorites: [...state.favorites, recipeId] };
+      }
+      return state;
+    }),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  toggleFavorite: (recipeId) =>
+    set((state) => {
+      const isFavorite = state.favorites.includes(recipeId);
+      return {
+        favorites: isFavorite
+          ? state.favorites.filter((id) => id !== recipeId)
+          : [...state.favorites, recipeId],
+      };
+    }),
+
+  isFavorite: (recipeId) =>
+    set((state) => {
+      return state.favorites.includes(recipeId);
+    }),
+
+  recommendations: [],
+
+  generateRecommendations: () =>
+    set((state) => {
+      // Get recipes that the user hasn't favorited yet
+      const unfavoritedRecipes = state.recipes.filter(
+        (recipe) => !state.favorites.includes(recipe.id)
+      );
+
+      // If no favorites, recommend recipes with shorter cooking time
+      if (state.favorites.length === 0) {
+        const recommended = unfavoritedRecipes
+          .sort((a, b) => (a.cookingTime || 0) - (b.cookingTime || 0))
+          .slice(0, 3);
+        return { recommendations: recommended };
+      }
+
+      // Find favorite recipes to analyze
+      const favoriteRecipes = state.recipes.filter((r) =>
+        state.favorites.includes(r.id)
+      );
+
+      // Get cooking times of favorite recipes to find similar ones
+      const avgCookingTime =
+        favoriteRecipes.reduce((sum, r) => sum + (r.cookingTime || 0), 0) /
+        favoriteRecipes.length;
+
+      // Recommend recipes with similar cooking time
+      const recommended = unfavoritedRecipes
+        .sort((a, b) => {
+          const aDiff = Math.abs((a.cookingTime || 0) - avgCookingTime);
+          const bDiff = Math.abs((b.cookingTime || 0) - avgCookingTime);
+          return aDiff - bDiff;
+        })
+        .slice(0, 3);
+
+      return { recommendations: recommended };
+    }),
 }));
 
 export default useRecipeStore;
