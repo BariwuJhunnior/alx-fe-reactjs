@@ -4,6 +4,7 @@ function UserCard({ user }) {
   if (!user) {
     return null;
   }
+
   return (
     <div className="user-card">
       <img
