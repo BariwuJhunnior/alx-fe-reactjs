@@ -6,6 +6,21 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
+  const styles = {
+    height: "30px",
+    width: "400px",
+    padding: "5px",
+    borderRadius: "10px",
+    border: "none",
+    marginBottom: "10px",
+  };
+
+  const searchInputStylesCont = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  };
+
   return (
     <div className="app-container">
       <h1>GitHub User Search</h1>
@@ -13,7 +28,10 @@ function App() {
       {/* Later, we will put our SearchBar component here.
         It will update 'searchTerm'. */}
 
-      <p>Search Input placeholder will go here.</p>
+      <div style={searchInputStylesCont}>
+        <input type="text" placeholder="Enter Search Term" style={styles} />
+        <button>Search</button>
+      </div>
 
       <main className="results-container">
         <h2>Results ({users.length} found)</h2>
