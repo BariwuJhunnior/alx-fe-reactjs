@@ -94,6 +94,12 @@ function Search() {
           placeholder="Enter GitHub username (e.g., octocat)"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            width: "300px",
+            padding: "10px",
+            borderRadius: "10px",
+            border: "none",
+          }}
         />
         <button type="submit">Search</button>
       </form>
