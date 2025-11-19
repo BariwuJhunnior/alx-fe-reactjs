@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GITHUB_BASE_URL = import.meta.env.VITE_APP_GITHUB_API_BASE_URL;
+const GITHUB_BASE_URL = "https://api.github.com";
 
 export const fetchUserData = async (username) => {
   if (!username) {
