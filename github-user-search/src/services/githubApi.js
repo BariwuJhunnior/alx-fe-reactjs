@@ -1,1 +1,0 @@
-const GITHUB_BASE_URL = import.meta.env.VITE_APP_GITHUB_API_BASE_URL;
