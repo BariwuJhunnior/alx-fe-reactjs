@@ -3,33 +3,7 @@ import "./App.css";
 import Search from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchUserData } from "./services/githubService";
-
-function UserCard({ user }) {
-  if (!user) {
-    return null;
-  }
-  return (
-    <div className="user-card">
-      <img
-        src={user.avartar_url}
-        alt={`${user.login}'s avatar`}
-        style={{ width: "100px", height: "100px", borderRadius: "50%" }}
-      />
-
-      <h3>{user.name || user.login} </h3>
-      <p>
-        <a href={user.html_url} target="_blank" rel="noopener noreferrer">
-          View GitHub Profile
-        </a>
-      </p>
-      {
-        {
-          /* We could add more details here later */
-        }
-      }
-    </div>
-  );
-}
+import UserCard from "./components/UserCard";
 
 function SearchPage({ users, searchTerm, isLoading, error, handleSearch }) {
   let content;
