@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchUserData } from "./services/githubService";
 import UserCard from "./components/UserCard";
 import { SearchPage } from "./components/Search";
+import UserDetailPage from "./components/UserDetailPage";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -72,7 +73,8 @@ function App() {
               />
             }
           />
-          /
+
+          <Route path="/user/:username" element={<UserDetailPage />} />
         </Routes>
       </BrowserRouter>
 

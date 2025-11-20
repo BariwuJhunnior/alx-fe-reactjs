@@ -2,6 +2,38 @@ import axios from "axios";
 
 const GITHUB_BASE_URL = "https://api.github.com";
 
+export const fetchUserProfile = async (username) => {
+  const url = `${GITHUB_BASE_URL}/users/${username}`;
+
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  }catch(error) {
+    //Handling 404 for a user profile
+    if(error.response && error.response.status === 404) {
+      throw new Error(`Profile for user '${username}' not found.`);
+    }
+    throw new Error('Failed to fetch user profile.');
+  }
+};
+
+export const fetchUserRepos = async (username) {
+  const url = `${GITHUB_BASE_URL}/users/${username}/repos`;
+
+  try {
+    const response = await axios.get(url, {
+      params: {
+        per_page: 10,
+        sort: 'updated',
+        direction: 'desc' //Most recently updated first
+      }
+    }) ;
+    return response.data;
+  }catch (error) {
+    throw new Error('Failed to fetch user repositories.')
+  }
+};
+
 const buildAdvancedQuery = (params) => {
   let queryParts = [];
 
