@@ -4,61 +4,7 @@ import Search from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchUserData } from "./services/githubService";
 import UserCard from "./components/UserCard";
-
-function SearchPage({
-  users,
-  isLoading,
-  error,
-  handleSearch,
-  totalCount,
-  handleLoadMore,
-}) {
-  //Renders the list of UserCard components
-  const userList = (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-      {users.map((user) => (
-        <UserCard key={user.id} user={user} />
-      ))}
-    </div>
-  );
-
-  //Conditional rendering logic for results section
-  let content;
-
-  if (isLoading && users.length === 0) {
-    content = <p className="text-center text-lg mt-8">Loading...</p>;
-  } else if (error) {
-    content = <p className="text-center text-red-500 mt-8">Error: {error}</p>;
-  } else if (users.length > 0) {
-    content = userList;
-  } else if (!isLoading && totalCount === 0) {
-    //Only show this if a search has been attempted(i.e., totalCount is 0 after a search)
-    content = (
-      <p className="text-center text-gray-500 mt-8">
-        No users found matching your criteria.
-      </p>
-    );
-  } else {
-    content = (
-      <p className="text-center text-gray-500 mt-8">
-        Start your advanced search above!
-      </p>
-    );
-  }
-
-  //Determine if the "Load More" button should be visible
-  const showLoadMore = users.length > 0 && users.length < totalCount;
-
-  return (
-    <>
-      <Search onSearch={handleSearch} />
-
-      <main className="results-container">
-        <h2>Search Result</h2>
-      </main>
-    </>
-  );
-}
+import { SearchPage } from "./components/Search";
 
 function App() {
   const [users, setUsers] = useState([]);
