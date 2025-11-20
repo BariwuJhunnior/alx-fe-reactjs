@@ -35,7 +35,7 @@ export const fetchUserData = async (searchParams) => {
     throw new Error("Please enter at least one search criterion.");
   }
 
-  ["https://api.github.com/search/users?1", "minRepos"];
+  ["https://api.github.com/search/users?q", "minRepos"];
 
   const url = `${GITHUB_BASE_URL}/search/users`;
 
