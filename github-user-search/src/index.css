@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -45,6 +49,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 10px;
 }
 button:hover {
   border-color: #646cff;
@@ -65,4 +70,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input {
+  margin-left: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
 }
