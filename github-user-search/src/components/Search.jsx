@@ -98,8 +98,27 @@ export function SearchPage({
     <>
       <Search onSearch={handleSearch} />
 
-      <main className="results-container">
-        <h2>Search Result</h2>
+      <main className="results-container p-4">
+        {users.length > 0 && (
+          <h2 className="text-xl font-bold mb-4">
+            Found {totalCount} users. Displaying {users.length}.
+          </h2>
+        )}
+
+        {content}
+
+        {/* Load More Button Logic */}
+        {showLoadMore && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={handleLoadMore}
+              disabled={isLoading}
+              className="px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 transition duration-150 disabled:bg-gray-400"
+            >
+              {isLoading ? "Loading More..." : "Load More Users"}
+            </button>
+          </div>
+        )}
       </main>
     </>
   );
