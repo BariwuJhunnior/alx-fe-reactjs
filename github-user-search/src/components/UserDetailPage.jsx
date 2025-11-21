@@ -83,7 +83,6 @@ const UserDetailPage = () => {
       setUserProfile(profileData);
       setRepositories(reposData);
     } catch (error) {
-      console.error(error);
       setError(error.message || "Failed to load user data.");
     } finally {
       setIsLoading(false);
