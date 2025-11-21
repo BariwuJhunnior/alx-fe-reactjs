@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 #Vercel Deployment Security
-.env*
+.env
