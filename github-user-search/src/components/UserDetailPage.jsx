@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { fetchUserProfile, fetchUserRepos } from "../services/githubService";
 
 const RepoItem = ({ repo }) => (
-  <div className="border-b p-3 last:border-b-0">
+  <div>
     <a
       href={repo.html_url}
       target="_blank"

@@ -8,29 +8,29 @@ export const fetchUserProfile = async (username) => {
   try {
     const response = await axios.get(url);
     return response.data;
-  }catch(error) {
+  } catch (error) {
     //Handling 404 for a user profile
-    if(error.response && error.response.status === 404) {
+    if (error.response && error.response.status === 404) {
       throw new Error(`Profile for user '${username}' not found.`);
     }
-    throw new Error('Failed to fetch user profile.');
+    throw new Error("Failed to fetch user profile.");
   }
 };
 
-export const fetchUserRepos = async (username) {
+export const fetchUserRepos = async (username) => {
   const url = `${GITHUB_BASE_URL}/users/${username}/repos`;
 
   try {
     const response = await axios.get(url, {
       params: {
         per_page: 10,
-        sort: 'updated',
-        direction: 'desc' //Most recently updated first
-      }
-    }) ;
+        sort: "updated",
+        direction: "desc", //Most recently updated first
+      },
+    });
     return response.data;
-  }catch (error) {
-    throw new Error('Failed to fetch user repositories.')
+  } catch (error) {
+    throw new Error(`Failed to fetch user repositories. ${error}`);
   }
 };
 
