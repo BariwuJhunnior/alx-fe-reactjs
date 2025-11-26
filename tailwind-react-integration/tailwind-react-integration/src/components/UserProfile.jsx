@@ -1,3 +1,5 @@
+import React from "react";
+
 function UserProfile() {
   return (
     <div className="bg-gray-100 p-8 max-w-sm-400 mx-auto my-20 rounded-lg shadow-lg">
