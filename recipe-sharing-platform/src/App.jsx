@@ -4,7 +4,7 @@ import "./index.css";
 function App() {
   return (
     <div>
-      <h1 className="text-blue-500">Hello World!</h1>
+      <h1 className="text-blue-500">Welcome to my Recipe Sharing App!</h1>
     </div>
   );
 }
