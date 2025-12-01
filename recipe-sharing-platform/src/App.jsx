@@ -1,10 +1,10 @@
 import React from "react";
-import UserProfile from "./components/UserProfile";
+import "./index.css";
 
 function App() {
   return (
     <div>
-      <UserProfile />
+      <h1 className="text-blue-500">Hello World!</h1>
     </div>
   );
 }
