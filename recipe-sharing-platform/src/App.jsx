@@ -1,10 +1,11 @@
 import React from "react";
 import "./index.css";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
     <div>
-      <h1 className="text-blue-500">Welcome to my Recipe Sharing App!</h1>
+      <HomePage />
     </div>
   );
 }

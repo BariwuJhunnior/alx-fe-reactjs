@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Classic Spaghetti Bolognese",
+    "summary": "A rich, slow-cooked beef and tomato sauce served over a bed of al dente spaghetti. A comforting family favorite.",
+    "image": "https://via.placeholder.com/250/FFA07A/FFFFFF?text=Bolognese"
+  },
+  {
+    "id": 2,
+    "title": "Simple Chicken Stir-Fry",
+    "summary": "Tender chicken and crisp, colorful vegetables tossed in a savory ginger-soy sauce. Quick and healthy weeknight meal.",
+    "image": "https://via.placeholder.com/250/20B2AA/FFFFFF?text=Stir-Fry"
+  },
+  {
+    "id": 3,
+    "title": "Creamy Tomato Soup",
+    "summary": "Velvety smooth tomato soup, perfect for pairing with a grilled cheese sandwich. Ready in under 30 minutes.",
+    "image": "https://via.placeholder.com/250/DC143C/FFFFFF?text=Tomato+Soup"
+  },
+  {
+    "id": 4,
+    "title": "Lemon Herb Roasted Salmon",
+    "summary": "Flaky salmon fillets baked with fresh lemon slices, rosemary, and thyme. An elegant and light dinner option.",
+    "image": "https://via.placeholder.com/250/4682B4/FFFFFF?text=Salmon"
+  },
+  {
+    "id": 5,
+    "title": "Vegetarian Chili",
+    "summary": "Hearty and spiced chili packed with beans, corn, and bell peppers. A satisfying, meat-free alternative.",
+    "image": "https://via.placeholder.com/250/FF4500/FFFFFF?text=Chili"
+  },
+  {
+    "id": 6,
+    "title": "Fluffy Pancakes",
+    "summary": "The ultimate breakfast classic. Light, tall pancakes ready to be topped with butter and maple syrup.",
+    "image": "https://via.placeholder.com/250/FFD700/000000?text=Pancakes"
+  },
+  {
+    "id": 7,
+    "title": "Beef Tacos al Pastor",
+    "summary": "Marinated beef (or pork) grilled with pineapple and served in soft corn tortillas with fresh cilantro and onion.",
+    "image": "https://via.placeholder.com/250/8B4513/FFFFFF?text=Tacos"
+  },
+  {
+    "id": 8,
+    "title": "Garlic Butter Shrimp Scampi",
+    "summary": "Shrimp sautéed in a rich sauce of butter, garlic, white wine, and lemon, typically served over linguine.",
+    "image": "https://via.placeholder.com/250/ADD8E6/000000?text=Scampi"
+  },
+  {
+    "id": 9,
+    "title": "Homemade Pizza Dough",
+    "summary": "The foundational recipe for a perfect, chewy, homemade pizza crust. Requires basic ingredients and time to rise.",
+    "image": "https://via.placeholder.com/250/8FBC8F/FFFFFF?text=Pizza"
+  },
+  {
+    "id": 10,
+    "title": "Cinnamon Rolls with Cream Cheese Frosting",
+    "summary": "Soft, sticky, and sweet rolls filled with cinnamon and topped with a decadent cream cheese glaze.",
+    "image": "https://via.placeholder.com/250/F08080/FFFFFF?text=Cinnamon+Rolls"
+  },
+  {
+    "id": 11,
+    "title": "Lentil Soup",
+    "summary": "A warming and nutritious soup featuring brown lentils, carrots, and celery in a savory vegetable broth.",
+    "image": "https://via.placeholder.com/250/D2B48C/FFFFFF?text=Lentil+Soup"
+  },
+  {
+    "id": 12,
+    "title": "Avocado Toast with Everything Bagel Seasoning",
+    "summary": "A quick and trendy breakfast or snack: smashed avocado on toasted bread, sprinkled with savory seasoning.",
+    "image": "https://via.placeholder.com/250/90EE90/000000?text=Avocado+Toast"
+  },
+  {
+    "id": 13,
+    "title": "Thai Green Curry",
+    "summary": "A fragrant and spicy curry with chicken or tofu, simmered in coconut milk with bamboo shoots and Thai basil.",
+    "image": "https://via.placeholder.com/250/3CB371/FFFFFF?text=Green+Curry"
+  },
+  {
+    "id": 14,
+    "title": "Classic Beef Burger",
+    "summary": "The ultimate backyard burger with a juicy beef patty, fresh lettuce, tomato, and cheese on a toasted bun.",
+    "image": "https://via.placeholder.com/250/800000/FFFFFF?text=Burger"
+  },
+  {
+    "id": 15,
+    "title": "Chocolate Chip Cookies",
+    "summary": "Chewy centers, crisp edges, and melted chocolate chips—the perfect batch of comforting homemade cookies.",
+    "image": "https://via.placeholder.com/250/D2691E/FFFFFF?text=Cookies"
+  },
+  {
+    "id": 16,
+    "title": "Pesto Pasta Salad",
+    "summary": "Cold pasta tossed with bright green pesto, cherry tomatoes, mozzarella balls, and pine nuts. Great for picnics.",
+    "image": "https://via.placeholder.com/250/5F9EA0/FFFFFF?text=Pasta+Salad"
+  },
+  {
+    "id": 17,
+    "title": "Breakfast Burrito",
+    "summary": "Scrambled eggs, sausage, cheese, and potatoes wrapped in a warm tortilla. Fully customizable and filling.",
+    "image": "https://via.placeholder.com/250/DAA520/FFFFFF?text=Burrito"
+  },
+  {
+    "id": 18,
+    "title": "Homemade Falafel",
+    "summary": "Crispy, spiced chickpea patties, often served in a pita with tahini sauce and fresh vegetables.",
+    "image": "https://via.placeholder.com/250/BC8F8F/FFFFFF?text=Falafel"
+  },
+  {
+    "id": 19,
+    "title": "Baked Macaroni and Cheese",
+    "summary": "Creamy, cheesy elbow macaroni topped with breadcrumbs and baked until golden brown and bubbly.",
+    "image": "https://via.placeholder.com/250/F4A460/FFFFFF?text=Mac+and+Cheese"
+  },
+  {
+    "id": 20,
+    "title": "French Onion Soup",
+    "summary": "Rich beef broth featuring caramelized onions, topped with a large crouton and a thick layer of melted Gruyère cheese.",
+    "image": "https://via.placeholder.com/250/BDB76B/FFFFFF?text=Onion+Soup"
+  }
+]
