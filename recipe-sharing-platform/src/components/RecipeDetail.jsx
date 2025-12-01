@@ -65,7 +65,7 @@ function RecipeDetail() {
   return (
     <div>
       <div>
-        <div className="p-4 hover:text-blue-600 text-end underline hover:no-underline inline-block mb-7">
+        <div className="p-4 hover:text-blue-600 text-end underline hover:no-underline inline-block mb-7 shadow-lg rounded-lg hover:scale-2">
           <Link to="/">&#8592; Back to Home</Link>
         </div>
         <div>
@@ -85,22 +85,22 @@ function RecipeDetail() {
           <p>{recipe.summary}</p>
         </div>
 
-        <div className="text-begin p-2">
-          <h1 className="font-bold text-2xl mb-5">Ingredients</h1>
-          <ol>
-            {recipe.ingredients?.map((item, index) => (
-              <li key={index}>* {item}</li>
-            )) || <p>Ingredients list not available.</p>}
-          </ol>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:text-center">
+          <div className="text-begin p-2">
+            <h1 className="font-bold text-2xl mb-5">Ingredients</h1>
+            <ol>
+              {recipe.ingredients?.map((item, index) => (
+                <li key={index}>* {item}</li>
+              )) || <p>Ingredients list not available.</p>}
+            </ol>
+          </div>
 
-        <div className="text-begin p-2">
-          <h1 className="text-2xl font-bold mb-5">Instructions</h1>
-          {recipe.instructions?.map((item, index) => (
-            <li>
-              <ul key={index}>{item}</ul>
-            </li>
-          ))}
+          <div className="text-begin p-2">
+            <h1 className="text-2xl font-bold mb-5">Instructions</h1>
+            {recipe.instructions?.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </div>
         </div>
       </div>
     </div>
