@@ -15,7 +15,7 @@ function AddRecipeForm({ setRecipes }) {
 
   // FIXED: Handler functions defined at component level
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target.value;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
