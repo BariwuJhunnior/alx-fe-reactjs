@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import data from "../data.json";
 
-function RecipeDetail() {
+function RecipeDetail({ recipes }) {
   const { id } = useParams();
 
   const [recipe, setRecipe] = useState(null);
@@ -28,14 +27,7 @@ function RecipeDetail() {
         return;
       }
 
-      const foundRecipe = data.find((recipe) => recipe.id === recipeId);
-
-      // DEBUG: Log the found recipe to check data structure
-      /* console.log("Found recipe:", foundRecipe);
-      console.log(
-        "Recipe data keys:",
-        foundRecipe ? Object.keys(foundRecipe) : "No recipe found"
-      ); */
+      const foundRecipe = recipes?.find((recipe) => recipe.id === recipeId);
 
       if (foundRecipe) {
         setRecipe(foundRecipe);
@@ -46,8 +38,10 @@ function RecipeDetail() {
       setIsLoading(false);
     };
 
-    loadRecipe();
-  }, [id]);
+    if (recipes) {
+      loadRecipe();
+    }
+  }, [id, recipes]);
 
   if (isLoading) {
     return (
@@ -65,8 +59,8 @@ function RecipeDetail() {
   return (
     <div>
       <div>
-        <div className="p-4 hover:text-blue-600 text-end underline hover:no-underline inline-block mb-7 shadow-lg rounded-lg hover:scale-2">
-          <Link to="/">&#8592; Back to Home</Link>
+        <div className="p-2 hover:text-blue-600 text-end underline flex justify-end mb-7 shadow-lg rounded-lg m-4">
+          <Link to="/">&#8592; Back</Link>
         </div>
         <div>
           <img
@@ -85,7 +79,7 @@ function RecipeDetail() {
           <p>{recipe.summary}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 md:text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="text-begin p-2">
             <h1 className="font-bold text-2xl mb-5">Ingredients</h1>
             <ol>
@@ -96,7 +90,7 @@ function RecipeDetail() {
           </div>
 
           <div className="text-begin p-2">
-            <h1 className="text-2xl font-bold mb-5">Instructions</h1>
+            <h1 className="text-2xl font-bold mb-5">Cooking Instructions</h1>
             {recipe.instructions?.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
