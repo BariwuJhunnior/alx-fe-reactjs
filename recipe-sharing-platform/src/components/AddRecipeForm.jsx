@@ -11,7 +11,7 @@ function AddRecipeForm({ setRecipes }) {
     imageUrl: "",
   });
 
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   // FIXED: Handler functions defined at component level
   const handleChange = (event) => {
@@ -25,11 +25,11 @@ function AddRecipeForm({ setRecipes }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setError("");
+    setErrors("");
 
     //Data Validation Code Here
     if (!formData.title.trim()) {
-      setError("Please provide a title for the recipe!");
+      setErrors("Please provide a title for the recipe!");
       return;
     }
 
@@ -46,12 +46,12 @@ function AddRecipeForm({ setRecipes }) {
     const validatedInstrunctions = cleanAndSplit(formData.instructions);
 
     if (validatedIngredients.length === 0) {
-      setError("Please list at least one ingredient!");
+      setErrors("Please list at least one ingredient!");
       return;
     }
 
     if (validatedInstrunctions.length === 0) {
-      setError("Please list at least one preparation step.");
+      setErrors("Please list at least one preparation step.");
       return;
     }
 
@@ -97,9 +97,9 @@ function AddRecipeForm({ setRecipes }) {
         className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 max-w-2xl mx-auto"
       >
         {/* Error Display */}
-        {error && (
+        {errors && (
           <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-            {error}
+            {errors}
           </div>
         )}
         {/* Title Input */}

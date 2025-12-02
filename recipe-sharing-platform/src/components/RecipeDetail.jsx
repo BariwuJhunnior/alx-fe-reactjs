@@ -6,15 +6,15 @@ function RecipeDetail({ recipes }) {
 
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [errors, setErrors] = useState(null);
 
   useEffect(() => {
     const loadRecipe = () => {
       setIsLoading(true);
-      setError(null);
+      setErrors(null);
 
       if (!id) {
-        setError("Missing recipe ID in URL!");
+        setErrors("Missing recipe ID in URL!");
         setIsLoading(false);
         return;
       }
@@ -22,7 +22,7 @@ function RecipeDetail({ recipes }) {
       const recipeId = parseInt(id);
 
       if (isNaN(recipeId)) {
-        setError(`Invalid recipe ID: ${id}.`);
+        setErrors(`Invalid recipe ID: ${id}.`);
         setIsLoading(false);
         return;
       }
@@ -32,7 +32,7 @@ function RecipeDetail({ recipes }) {
       if (foundRecipe) {
         setRecipe(foundRecipe);
       } else {
-        setError(`Recipe with ID ${recipeId} not found!`);
+        setErrors(`Recipe with ID ${recipeId} not found!`);
       }
 
       setIsLoading(false);
@@ -49,8 +49,8 @@ function RecipeDetail({ recipes }) {
         Loading Recipe Details...
       </div>
     );
-  } else if (error) {
-    return <div>{error}</div>;
+  } else if (errors) {
+    return <div>{errors}</div>;
   }
 
   if (!recipe) {
