@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./data.json";
+import data from "../data.json";
 
 function HomePage({ recipes, isLoading }) {
   // Show loading state first
