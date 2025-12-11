@@ -7,7 +7,11 @@ function RegistrationFrom() {
     password: '',
   })
 
-  const [formErrors, setFormErrors] = useState({});
+  const username = formData.username;
+  const email = formData.email;
+  const password = formData.password
+
+  const [formErrors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   //Function to handle Change in state of specific input field
@@ -19,7 +23,7 @@ function RegistrationFrom() {
 
   //Clear the error for the current field as the user types
   if(formErrors[name]) {
-    setFormErrors((prevErrors) => ({
+    setErrors((prevErrors) => ({
       ...prevErrors, [name]: '',
     }))
   };
@@ -27,13 +31,13 @@ function RegistrationFrom() {
   //Validations
   const validateForm = () => {
     const errors = {};
-    if(!formData.username.trim()) {
+    if(!username.trim()) {
       errors.name = 'Name is required!';
     }
-    if(!formData.email.trim()) {
+    if(!email.trim()) {
       errors.email = 'Email is required!';
     }
-    if(!formData.password.trim()) {
+    if(!password.trim()) {
       errors.password = 'Password is required!';
     }
 
@@ -43,7 +47,7 @@ function RegistrationFrom() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = validateForm();
-    setFormErrors(validationErrors);
+    setErrors(validationErrors);
 
     //Check if there are any errors
     if(Object.keys(validationErrors).length == 0) {
