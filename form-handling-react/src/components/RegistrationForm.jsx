@@ -68,19 +68,19 @@ function RegistrationFrom() {
       )}
        <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
-        <input type="text" id='name' name='name' value={formData.username} onChange={handleChange}/>
+        <input type="text" id='name' name='name' value={username} onChange={handleChange}/>
         {formErrors.name && (
           <p style={{color: 'red'}}>{formErrors.name}</p>
         )}
 
         <label htmlFor="email">Email:</label>
-        <input type="email" value={formData.email} id='email' name='email'  onChange={handleChange}/>
+        <input type="email" value={email} id='email' name='email'  onChange={handleChange}/>
         {formErrors.email && (
           <p style={{ color: 'red' }}>{formErrors.email}</p>
         )}
 
         <label htmlFor="password">Password: </label>
-        <input type="password" value={formData.password} id='password' name='password' onChange={handleChange}/>
+        <input type="password" value={password} id='password' name='password' onChange={handleChange}/>
         {formErrors.password && (
           <p style={{color:'red'}}>{formErrors.password}</p>
         )}
