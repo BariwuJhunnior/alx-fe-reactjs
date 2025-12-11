@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function RegistrationFrom() {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   })
@@ -12,9 +12,9 @@ function RegistrationFrom() {
 
   //Function to handle Change in state of specific input field
   const handleChange = (event) => {
-    const {name, value} = event.target;
+    const {username, value} = event.target;
 
-    setFormData(prevState => ({...prevState, [name]: value}));
+    setFormData(prevState => ({...prevState, [username]: value}));
   };
 
   //Clear the error for the current field as the user types
@@ -27,7 +27,7 @@ function RegistrationFrom() {
   //Validations
   const validateForm = () => {
     const errors = {};
-    if(!formData.name.trim()) {
+    if(!formData.username.trim()) {
       errors.name = 'Name is required!';
     }
     if(!formData.email.trim()) {
@@ -51,11 +51,11 @@ function RegistrationFrom() {
       console.log('Registration successfully Submitted:', formData);
       setIsSubmitted(true);
 
-      setFormData({name:'', email: '', password: ''}); 
+      setFormData({username:'', email: '', password: ''}); 
     } else {
       console.log('Form submission failed due to validation errors!');
       setIsSubmitted(false);
-      setFormData({name:'', email: '', password: ''}); 
+      setFormData({username:'', email: '', password: ''}); 
     }
 
   };
@@ -68,19 +68,19 @@ function RegistrationFrom() {
       )}
        <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
-        <input type="text" id='name' name='name' value={username} onChange={handleChange}/>
+        <input type="text" id='name' name='name' value={formData.username} onChange={handleChange}/>
         {formErrors.name && (
           <p style={{color: 'red'}}>{formErrors.name}</p>
         )}
 
         <label htmlFor="email">Email:</label>
-        <input type="email" value={email} id='email' name='email'  onChange={handleChange}/>
+        <input type="email" value={formData.email} id='email' name='email'  onChange={handleChange}/>
         {formErrors.email && (
           <p style={{ color: 'red' }}>{formErrors.email}</p>
         )}
 
         <label htmlFor="password">Password: </label>
-        <input type="password" value={password} id='password' name='password' onChange={handleChange}/>
+        <input type="password" value={formData.password} id='password' name='password' onChange={handleChange}/>
         {formErrors.password && (
           <p style={{color:'red'}}>{formErrors.password}</p>
         )}

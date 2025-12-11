@@ -5,7 +5,7 @@ import formikForm from './components/formikForm';
 function App() {
   return (
     <div>
-      <formikForm />
+      formikForm
     </div>
   )
 }
