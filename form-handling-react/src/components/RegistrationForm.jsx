@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function RegistrationFrom() {
   const [formData, setFormData] = useState({
-    name: '',
+    usernamename: '',
     email: '',
     password: '',
   })
@@ -12,9 +12,9 @@ function RegistrationFrom() {
 
   //Function to handle Change in state of specific input field
   const handleChange = (event) => {
-    const {name, value} = event.target;
+    const {username, value} = event.target;
 
-    setFormData(prevState => ({...prevState, [name]: value}));
+    setFormData(prevState => ({...prevState, [username]: value}));
   };
 
   //Clear the error for the current field as the user types
