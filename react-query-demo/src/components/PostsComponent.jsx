@@ -10,7 +10,7 @@ function PostsComponent() {
     return response.json();
   };
 
-  const {data, error, isLoading} = useQuery('fetchData', fetchData);
+  const {data, error, isLoading, isError, fetchPosts} = useQuery('fetchData', fetchData);
 
   //Handle isLoading State
   if (isLoading) {
