@@ -29,6 +29,17 @@ function RegistrationFrom() {
   };
 
   //Validations
+  const errors = {};
+    if(!username) {
+      errors.name = 'Name is required!';
+    }
+    if(!email) {
+      errors.email = 'Email is required!';
+    }
+    if(!password) {
+      errors.password = 'Password is required!';
+    }
+    
   const validateForm = () => {
     const errors = {};
     if(!username) {
@@ -46,16 +57,7 @@ function RegistrationFrom() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const errors = {};
-    if(!username) {
-      errors.name = 'Name is required!';
-    }
-    if(!email) {
-      errors.email = 'Email is required!';
-    }
-    if(!password) {
-      errors.password = 'Password is required!';
-    }
+    
     const validationErrors = validateForm();
     setErrors(validationErrors);
 
