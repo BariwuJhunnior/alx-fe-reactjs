@@ -9,7 +9,7 @@ function RegistrationFrom() {
 
   const username = formData.username;
   const email = formData.email;
-  const password = formData.password
+  const password = formData.password;
 
   const [formErrors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -29,26 +29,16 @@ function RegistrationFrom() {
   };
 
   //Validations
-  const errors = {};
-    if(!username) {
-      errors.name = 'Name is required!';
-    }
-    if(!email) {
-      errors.email = 'Email is required!';
-    }
-    if(!password) {
-      errors.password = 'Password is required!';
-    }
-    
+  
   const validateForm = () => {
     const errors = {};
-    if(!username) {
+    if (!username) {
       errors.name = 'Name is required!';
     }
-    if(!email) {
+    if (!email) {
       errors.email = 'Email is required!';
     }
-    if(!password) {
+    if (!password) {
       errors.password = 'Password is required!';
     }
 
