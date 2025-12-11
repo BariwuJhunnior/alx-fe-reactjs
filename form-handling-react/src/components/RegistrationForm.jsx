@@ -31,13 +31,13 @@ function RegistrationFrom() {
   //Validations
   const validateForm = () => {
     const errors = {};
-    if(!username.trim()) {
+    if(!username) {
       errors.name = 'Name is required!';
     }
-    if(!email.trim()) {
+    if(!email) {
       errors.email = 'Email is required!';
     }
-    if(!password.trim()) {
+    if(!password) {
       errors.password = 'Password is required!';
     }
 
