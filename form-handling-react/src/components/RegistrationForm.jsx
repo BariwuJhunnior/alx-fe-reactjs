@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function RegistrationFrom() {
   const [formData, setFormData] = useState({
-    usernamename: '',
+    name: '',
     email: '',
     password: '',
   })
@@ -12,9 +12,9 @@ function RegistrationFrom() {
 
   //Function to handle Change in state of specific input field
   const handleChange = (event) => {
-    const {username, value} = event.target;
+    const {name, value} = event.target;
 
-    setFormData(prevState => ({...prevState, [username]: value}));
+    setFormData(prevState => ({...prevState, [name]: value}));
   };
 
   //Clear the error for the current field as the user types
@@ -68,19 +68,19 @@ function RegistrationFrom() {
       )}
        <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
-        <input type="text" id='name' name='name'  onChange={handleChange}/>
+        <input type="text" id='name' name='name' value={username} onChange={handleChange}/>
         {formErrors.name && (
           <p style={{color: 'red'}}>{formErrors.name}</p>
         )}
 
         <label htmlFor="email">Email:</label>
-        <input type="email" id='email' name='email'  onChange={handleChange}/>
+        <input type="email" value={email} id='email' name='email'  onChange={handleChange}/>
         {formErrors.email && (
           <p style={{ color: 'red' }}>{formErrors.email}</p>
         )}
 
         <label htmlFor="password">Password: </label>
-        <input type="password" id='password' name='password' onChange={handleChange}/>
+        <input type="password" value={password} id='password' name='password' onChange={handleChange}/>
         {formErrors.password && (
           <p style={{color:'red'}}>{formErrors.password}</p>
         )}
