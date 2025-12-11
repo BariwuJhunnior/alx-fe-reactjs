@@ -10,7 +10,7 @@ function PostsComponent() {
     return response.json();
   };
 
-  const {data, error, isLoading} = useQuery('fetchData', fetchData);
+  const {fetchPosts, isError, isLoading} = useQuery('fetchData', fetchData);
 
   //Handle isLoading State
   if (isLoading) {
@@ -18,14 +18,14 @@ function PostsComponent() {
   }
 
   //Handle Error State
-  if (error) {
+  if (isError) {
     return <div>Error Loading Data!</div>
   }
 
   //Render the fetched Data
   return (
     <div>
-      {data.map(item => (
+      {fetchPosts.map(item => (
         <div key={item.id}>{item.name}</div>
       ))}
     </div>
