@@ -9,6 +9,7 @@ import ProfileDetails from "./components/ProfileDetails.jsx";
 import ProfileSettings from "./components/ProfileSettings.jsx";
 import { AuthProvider, useAuth } from "./contexts/AuthContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import BlogPost from "./components/BlogPost.jsx";
 
 // --- Simple Login Component ---
 const Login = () => {
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegistrationForm />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
         <Route path="/profile" element={<Profile />}>
           <Route index={true} element={<ProfileDetails />} />
