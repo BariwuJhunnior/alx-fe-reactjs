@@ -6,10 +6,11 @@ const AddTodoForm = ({ onAddTodo }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Logic to add todo item
-    if (inputText.trim() === "") return; //Prevent empy submissions
+    const trimmedText = inputText.trim();
+    if (trimmedText === "") return; //Prevent empy submissions
 
     //Call the parent's function to update the state
-    onAddTodo(inputText);
+    onAddTodo(trimmedText);
 
     //Clear the input field after submission
     setInputText("");

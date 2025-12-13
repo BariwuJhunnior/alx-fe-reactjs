@@ -1,22 +1,17 @@
 export default {
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  moduleNameMapping: {
+  roots: ["<rootDir>/src"],
+  testMatch: ["**/__tests__/**/*.test.js"],
+  moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
   transform: {
-    "^.+\\.jsx?$": "babel-jest",
+    "^.+\\.(jsx?|mjs|cjs)$": "babel-jest",
   },
-  testMatch: [
-    "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
-    "<rootDir>/src/**/*.{test,spec}.{js,jsx}",
-  ],
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
   collectCoverageFrom: [
     "src/**/*.{js,jsx}",
     "!src/main.jsx",
-    "!src/index.js",
-    "!src/**/*.d.ts",
+    "!src/**/*.test.{js,jsx}",
   ],
-  coverageDirectory: "coverage",
-  coverageReporters: ["text", "lcov", "html"],
 };
